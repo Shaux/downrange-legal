@@ -1,0 +1,142 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Delete your Downrange account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3EFE4;
+    --card: #FFFFFF;
+    --raised: #FAF6EC;
+    --border: #E2D9C5;
+    --border-strong: #D3C6A8;
+    --ink: #221E17;
+    --muted: #74695A;
+    --brass: #9C6530;
+    --brass-bright: #A9691F;
+    --good-bg: #E7F3E4;
+    --good-ink: #2F5A32;
+    --good-border: #BFDDBB;
+    --link: #8A5323;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1B1A17;
+      --card: #242320;
+      --raised: #2B2A25;
+      --border: #3A3830;
+      --border-strong: #4A473D;
+      --ink: #F1EEE4;
+      --muted: #9A9284;
+      --brass: #B8793A;
+      --brass-bright: #D8A15C;
+      --good-bg: rgba(143,203,146,0.12);
+      --good-ink: #8FCB92;
+      --good-border: rgba(143,203,146,0.35);
+      --link: #D8A15C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1B1A17;
+    --card: #242320;
+    --raised: #2B2A25;
+    --border: #3A3830;
+    --border-strong: #4A473D;
+    --ink: #F1EEE4;
+    --muted: #9A9284;
+    --brass: #B8793A;
+    --brass-bright: #D8A15C;
+    --good-bg: rgba(143,203,146,0.12);
+    --good-ink: #8FCB92;
+    --good-border: rgba(143,203,146,0.35);
+    --link: #D8A15C;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--brass); color: #1B1A17; }
+
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+
+  .masthead { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px;
+    border-bottom: 1px solid var(--border-strong); padding-bottom: 20px; margin-bottom: 8px; }
+  .wordmark { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.04em;
+    color: var(--brass-bright); text-transform: uppercase; }
+  .doc-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: var(--muted);
+    text-transform: uppercase; }
+
+  .meta-row { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted); margin: 18px 0 36px;
+    display: flex; gap: 18px; flex-wrap: wrap; }
+  .meta-row b { color: var(--ink); font-weight: 500; }
+
+  .tldr { background: var(--good-bg); border: 1px solid var(--good-border); border-radius: 12px; padding: 20px 22px;
+    margin-bottom: 44px; }
+  .tldr-label { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--good-ink); margin-bottom: 8px; }
+  .tldr p { margin: 0; color: var(--ink); font-size: 16.5px; }
+  .tldr p + p { margin-top: 10px; }
+
+  h2 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--brass-bright); margin: 44px 0 4px; text-wrap: balance; }
+  .section-num { color: var(--muted); font-weight: 500; margin-right: 10px; }
+  h2 + p, h2 + ul { margin-top: 14px; }
+
+  p { margin: 14px 0; max-width: 62ch; }
+  ul { margin: 14px 0; padding-left: 22px; max-width: 60ch; }
+  li { margin: 8px 0; }
+  strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--link); text-decoration-color: var(--border-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+
+  code, .mono { font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; background: var(--raised);
+    border: 1px solid var(--border); border-radius: 4px; padding: 0.1em 0.4em; }
+
+  table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 14.5px; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-family: 'Oswald', sans-serif; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+
+  .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px;
+    margin-top: 16px; }
+  .contact-card .row { display: flex; gap: 10px; font-size: 15px; padding: 6px 0; }
+  .contact-card .row .k { color: var(--muted); flex: 0 0 96px; }
+  .placeholder { color: var(--muted); font-style: italic; }
+
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px; color: var(--muted); }
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <span class="wordmark">Downrange</span>
+    <span class="doc-label">Account deletion</span>
+  </div>
+  <div class="meta-row"><span>Package <b>com.downrange.analyzer</b></span></div>
+
+  <h2><span class="section-num">1.</span>In the app</h2>
+  <p>Open <strong>Settings &rarr; Sync &rarr; Delete cloud account</strong> and confirm. This permanently deletes your synced data, your target photos in the cloud and your sign-in. Data stored on your device is not affected.</p>
+
+  <h2><span class="section-num">2.</span>If you cannot open the app</h2>
+  <p>Email <a href="mailto:info.downrangebalistics@gmail.com?subject=Delete%20my%20Downrange%20account">info.downrangebalistics@gmail.com</a> from the Google account you used to sign in, with the subject "Delete my Downrange account". We will delete your account and its data and confirm by reply, within 30 days.</p>
+
+  <h2><span class="section-num">3.</span>What is deleted</h2>
+  <ul>
+    <li>Your synced groups, loads, rifles, round log, sessions, saved analyses and target presets</li>
+    <li>Your target photos stored in the cloud</li>
+    <li>Your sign-in record (the email and Google identifier we hold)</li>
+  </ul>
+  <p>Anonymous usage statistics are not linked to your account. To have them deleted too, say so in your email and include the install identifier shown in Settings. Purchase records are held by Google Play and RevenueCat under their own policies.</p>
+
+  <p><a href="index.html">Back to the privacy policy</a></p>
+  <footer>Downrange · com.downrange.analyzer · This document has no tracking of its own.</footer>
+</div>
+</body></html>

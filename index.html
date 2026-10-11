@@ -123,59 +123,68 @@
   </div>
 
   <div class="meta-row">
-    <span>Effective <b>29 August 2026</b></span>
-    <span>App version <b>1.0.0</b></span>
+    <span>Effective <b class="placeholder">[date of the release that ships sync]</b></span>
+    <span>App version <b class="placeholder">[version]</b></span>
     <span>Package <b>com.downrange.analyzer</b></span>
   </div>
 
   <div class="tldr">
     <div class="tldr-label">In short</div>
-    <p><strong>Downrange does not collect, transmit, or store your data on any server.</strong> Every photo, shot group, load profile, and setting stays on your device, in your device's own storage. There is no account, no analytics, no ad tracking, and no server this app talks to for its own purposes.</p>
-    <p>The one exception is the subscription itself: purchases are processed by Google Play and verified through RevenueCat, described in full below.</p>
+    <p><strong>Downrange works fully offline, and by default nothing leaves your device.</strong> Your photos, shot groups, loads and settings are stored on your phone. There is no advertising, no ad tracking and nothing is sold.</p>
+    <p>Three things are optional and each is <strong>off until you turn it on</strong>: syncing to your own account, sharing crash reports, and sharing anonymous usage statistics. Subscriptions are handled by Google Play and RevenueCat.</p>
   </div>
 
   <h2><span class="section-num">1.</span>What Downrange is</h2>
-  <p>Downrange is an offline target-analysis tool for shooting-sports practice. You photograph or manually mark a shot group, and the app computes group statistics — spread, dispersion, point-of-impact offset, and related metrics — entirely on the device. It is built as a personal record-keeping and analysis tool, not a networked service.</p>
+  <p>Downrange is a target-analysis tool for shooting-sports practice. You photograph or manually mark a shot group, and the app computes group statistics (spread, dispersion, point-of-impact offset and related metrics) on the device. It is a personal record-keeping and analysis tool, intended for adults (see section 10).</p>
 
-  <h2><span class="section-num">2.</span>What we collect</h2>
-  <p><strong>Nothing, on our end.</strong> Downrange has no backend server, and nothing you enter or photograph is transmitted anywhere by the app itself. Specifically, the app never sends:</p>
-  <ul>
-    <li>Target photos, or any image data</li>
-    <li>Shot coordinates, group statistics, or load-profile details (caliber, charge, seating depth, and similar handload data)</li>
-    <li>Velocity readings, environmental conditions, or notes you enter</li>
-    <li>Your name, location, or any other personal identifier</li>
-  </ul>
+  <h2><span class="section-num">2.</span>What stays on your device</h2>
+  <p>Unless you turn on one of the options below, everything you enter or photograph stays in your device's own storage: target photos, shot coordinates, group statistics, loads, rifles, sessions, notes, velocity readings and settings. Uninstalling the app removes it. A session file you explicitly export or share is the only other way data leaves the app.</p>
 
-  <h2><span class="section-num">3.</span>What's stored, and where</h2>
-  <p>All app data lives in local storage on your device, using standard Android/WebView storage mechanisms:</p>
+  <h2><span class="section-num">3.</span>Optional features, and what each sends</h2>
   <div class="table-wrap">
-    <table>
-      <tr><th>Data</th><th>Stored via</th><th>Leaves the device?</th></tr>
-      <tr><td>Target photos</td><td>Local database (IndexedDB), downscaled on save</td><td>Never</td></tr>
-      <tr><td>Groups, profiles, settings</td><td>Local device storage</td><td>Never</td></tr>
-      <tr><td>Session export files (JSON/CSV)</td><td>A file you explicitly save or share</td><td>Only if you choose to share it</td></tr>
-    </table>
+  <table>
+    <tr><th>Feature (all off by default)</th><th>What is sent</th><th>Who processes it</th><th>Why we may do this (GDPR)</th></tr>
+    <tr><td><strong>Sync</strong>: back up and share your data across your devices</td><td>The email on your Google account, and your groups, loads, rifles, round log, sessions, saved analyses, target presets and target photos</td><td>Supabase (data hosted in the EU); Google (sign-in)</td><td>Contract: you asked for the service</td></tr>
+    <tr><td><strong>Crash reports</strong></td><td>Technical error details: app version, device model, Android version, and the error with its stack trace. No account details, no shooting data, no photos</td><td>Sentry (EU data region)</td><td>Your consent</td></tr>
+    <tr><td><strong>Usage statistics</strong></td><td>A short list of anonymous events (such as which screens are used) tied to a random install identifier, not to your account, name or email. No free text and no shooting data</td><td>Supabase (EU)</td><td>Your consent</td></tr>
+  </table>
   </div>
-  <p>Uninstalling the app removes this data along with it, the same as any other locally-stored app data. Exporting a session file is the only way data leaves the app, and it only happens when you choose to export or share one.</p>
+  <p>Turning a feature off stops it immediately. Reminders, if you enable them, are scheduled on your device and send nothing anywhere.</p>
 
-  <h2><span class="section-num">4.</span>Camera and photo library access</h2>
-  <p>Downrange requests camera or photo-library access only at the moment you choose to add a target photo, not on launch. Photos you capture or select are used solely to mark shots and derive group statistics; they are stored locally as described above and are never uploaded. Declining access simply falls back to the app's manual grid-entry mode.</p>
-
-  <h2><span class="section-num">5.</span>Subscriptions and purchases</h2>
-  <p>Downrange offers an optional paid tier through Google Play's subscription system. Purchases are handled by <strong>Google Play Billing</strong> and verified using <strong>RevenueCat</strong>, a subscription-infrastructure provider. To validate your entitlement, RevenueCat receives:</p>
+  <h2><span class="section-num">4.</span>How long we keep it</h2>
   <ul>
-    <li>An anonymous, app-specific user identifier (not your name or Google account)</li>
-    <li>Purchase and subscription-status tokens from Google Play</li>
+    <li><strong>Sync data:</strong> until you delete your cloud account (see section 8), when it is removed from our servers.</li>
+    <li><strong>Crash reports:</strong> <span class="placeholder">[confirm Sentry retention before publishing; the default is 90 days]</span>.</li>
+    <li><strong>Usage statistics:</strong> deleted automatically after 13 months. You can also ask for them to be deleted (section 8).</li>
   </ul>
-  <p>Neither Google nor RevenueCat receives any of the target, group, or profile data described above — that data never leaves the device regardless of subscription status. For details on how each service handles the data it does process, see <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
-  <h2><span class="section-num">6.</span>Children's privacy</h2>
-  <p>Downrange is not directed at children under 13, and the app does not knowingly collect information from anyone — a design that applies uniformly regardless of the user's age.</p>
+  <h2><span class="section-num">5.</span>Camera and photo library access</h2>
+  <p>Downrange requests camera or photo-library access only when you choose to add a target photo, not on launch. Photos are used to mark shots and derive group statistics and are stored on your device. They are uploaded only if you have turned on Sync. Declining access falls back to the manual grid.</p>
 
-  <h2><span class="section-num">7.</span>Changes to this policy</h2>
-  <p>If this policy changes, the update will be posted at this same address with a revised effective date above. Continued use of the app after a change constitutes acceptance of the revised policy.</p>
+  <h2><span class="section-num">6.</span>Subscriptions and purchases</h2>
+  <p>Downrange offers an optional paid tier through Google Play's subscription system. Purchases are handled by <strong>Google Play Billing</strong> and verified using <strong>RevenueCat</strong>. RevenueCat receives an app-specific user identifier and purchase and subscription-status tokens from Google Play. If you use Sync, that identifier is your account's, so your subscription follows you across devices. Neither Google Play nor RevenueCat receives your target, group or load data. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
-  <h2><span class="section-num">8.</span>Contact</h2>
+  <h2><span class="section-num">7.</span>No sale, no advertising</h2>
+  <p>We do not sell your personal information, do not share it for cross-context behavioural advertising, and do not use it for advertising or profiling. Because of that, no "Do Not Sell or Share" link is needed under California's CCPA/CPRA or similar US state laws.</p>
+
+  <h2><span class="section-num">8.</span>Your rights and controls</h2>
+  <ul>
+    <li><strong>Access and portability:</strong> Settings &rarr; Data exports everything you have created as a JSON file.</li>
+    <li><strong>Delete your cloud account and synced data:</strong> Settings &rarr; Sync &rarr; Delete cloud account. If you cannot open the app, use the <a href="delete-account.html">account deletion page</a>. Data on your device is not affected.</li>
+    <li><strong>Withdraw consent:</strong> switch off crash reports or usage statistics in Settings at any time.</li>
+    <li><strong>Other requests</strong> (correction, objection, a complaint to your data-protection authority): email us at the address below. If you are in the EU or UK you have these rights under the GDPR; California residents have equivalent rights under the CCPA/CPRA.</li>
+  </ul>
+
+  <h2><span class="section-num">9.</span>Service providers</h2>
+  <p>We use these processors under data-processing agreements: <strong>Supabase</strong> (database, storage, authentication; EU region), <strong>Sentry</strong> (crash reports; EU data region), <strong>RevenueCat</strong> (subscriptions) and <strong>Google</strong> (Play Billing and sign-in). Each has its own sub-processors, listed in its own privacy documentation.</p>
+
+  <h2><span class="section-num">10.</span>Children's privacy</h2>
+  <p>Downrange is intended for people aged 18 or over and is not directed at children. We do not knowingly collect information from anyone under 18.</p>
+
+  <h2><span class="section-num">11.</span>Changes to this policy</h2>
+  <p>If this policy changes, the update will be posted at this address with a revised effective date. Any new kind of data collection will be off by default and will need your opt-in.</p>
+
+  <h2><span class="section-num">12.</span>Contact</h2>
   <p>Questions about this policy or the app can be directed to:</p>
   <div class="contact-card">
     <div class="row"><span class="k">Developer</span><span>Michael Shaughnessy</span></div>
