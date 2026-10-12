@@ -130,53 +130,50 @@
 
   <div class="tldr">
     <div class="tldr-label">In short</div>
-    <p><strong>Downrange works fully offline, and by default nothing leaves your device.</strong> Your photos, shot groups, loads and settings are stored on your phone. There is no advertising, no ad tracking and nothing is sold.</p>
-    <p>Three things are optional and each is <strong>off until you turn it on</strong>: syncing to your own account, sharing crash reports, and sharing anonymous usage statistics. Subscriptions are handled by Google Play and RevenueCat.</p>
+    <p><strong>Downrange works fully offline, and by default your data stays on your device.</strong> Your photos, shot groups, loads and settings are stored on your phone. There is no advertising, no tracking and nothing is sold.</p>
+    <p><strong>Sync is optional and off until you turn it on</strong>: it keeps a copy in your own account so your data follows you across devices. Subscriptions are handled by Google Play and RevenueCat.</p>
   </div>
 
   <h2><span class="section-num">1.</span>What Downrange is</h2>
   <p>Downrange is a target-analysis tool for shooting-sports practice. You photograph or manually mark a shot group, and the app computes group statistics (spread, dispersion, point-of-impact offset and related metrics) on the device. It is a personal record-keeping and analysis tool, intended for adults (see section 10).</p>
 
   <h2><span class="section-num">2.</span>What stays on your device</h2>
-  <p>Unless you turn on one of the options below, everything you enter or photograph stays in your device's own storage: target photos, shot coordinates, group statistics, loads, rifles, sessions, notes, velocity readings and settings. Uninstalling the app removes it. A session file you explicitly export or share is the only other way data leaves the app.</p>
+  <p>Unless you turn on Sync, everything you enter or photograph stays in your device's own storage: target photos, shot coordinates, group statistics, loads, rifles, sessions, notes, velocity readings and settings. Uninstalling the app removes it. A session file you explicitly export or share is the only other way data leaves the app.</p>
 
-  <h2><span class="section-num">3.</span>Optional features, and what each sends</h2>
+  <h2><span class="section-num">3.</span>Sync, and what it sends</h2>
   <div class="table-wrap">
   <table>
-    <tr><th>Feature (all off by default)</th><th>What is sent</th><th>Who processes it</th><th>Why we may do this (GDPR)</th></tr>
+    <tr><th>Feature (off by default)</th><th>What is sent</th><th>Who processes it</th><th>Why we may do this (GDPR)</th></tr>
     <tr><td><strong>Sync</strong>: back up and share your data across your devices</td><td>The email on your Google account, and your groups, loads, rifles, round log, sessions, saved analyses, target presets and target photos</td><td>Supabase (data hosted in the EU); Google (sign-in)</td><td>Contract: you asked for the service</td></tr>
-    <tr><td><strong>Crash reports</strong></td><td>Technical error details: app version, device model, Android version, and the error with its stack trace. No account details, no shooting data, no photos</td><td>Sentry (EU data region)</td><td>Your consent</td></tr>
-    <tr><td><strong>Usage statistics</strong></td><td>A short list of anonymous events (such as which screens are used) tied to a random install identifier, not to your account, name or email. No free text and no shooting data</td><td>Supabase (EU)</td><td>Your consent</td></tr>
   </table>
   </div>
-  <p>Turning a feature off stops it immediately. Reminders, if you enable them, are scheduled on your device and send nothing anywhere.</p>
+  <p>Sample data that ships with the app is never synced. Pausing Sync or signing out stops sending immediately; changes wait on the device until you resume. The app does not send crash reports or usage statistics. If optional ones are ever added, they will be off by default and this policy will describe them before they ship.</p>
 
   <h2><span class="section-num">4.</span>How long we keep it</h2>
   <ul>
-    <li><strong>Sync data:</strong> until you delete your cloud account (see section 8), when it is removed from our servers.</li>
-    <li><strong>Crash reports:</strong> <span class="placeholder">[confirm Sentry retention before publishing; the default is 90 days]</span>.</li>
-    <li><strong>Usage statistics:</strong> deleted automatically after 13 months. You can also ask for them to be deleted (section 8).</li>
+    <li><strong>Sync data:</strong> until you delete your cloud account (see section 8), when it is removed from our servers. Records you delete in the app are kept as a small deletion marker (no content) so your other devices remove them too.</li>
+    <li><strong>Data on your device:</strong> until you delete it, clear the app's data, or uninstall.</li>
   </ul>
 
   <h2><span class="section-num">5.</span>Camera and photo library access</h2>
   <p>Downrange requests camera or photo-library access only when you choose to add a target photo, not on launch. Photos are used to mark shots and derive group statistics and are stored on your device. They are uploaded only if you have turned on Sync. Declining access falls back to the manual grid.</p>
 
   <h2><span class="section-num">6.</span>Subscriptions and purchases</h2>
-  <p>Downrange offers an optional paid tier through Google Play's subscription system. Purchases are handled by <strong>Google Play Billing</strong> and verified using <strong>RevenueCat</strong>. RevenueCat receives an app-specific user identifier and purchase and subscription-status tokens from Google Play. If you use Sync, that identifier is your account's, so your subscription follows you across devices. Neither Google Play nor RevenueCat receives your target, group or load data. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+  <p>Downrange offers an optional paid tier through Google Play's subscription system. Purchases are handled by <strong>Google Play Billing</strong> and verified using <strong>RevenueCat</strong>. When the app starts it checks your subscription status, so RevenueCat receives an app-specific user identifier and purchase and subscription-status tokens from Google Play, whether or not you have subscribed. If you use Sync, that identifier is your account's, so your subscription follows you across devices. Neither Google Play nor RevenueCat receives your target, group or load data. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
   <h2><span class="section-num">7.</span>No sale, no advertising</h2>
   <p>We do not sell your personal information, do not share it for cross-context behavioural advertising, and do not use it for advertising or profiling. Because of that, no "Do Not Sell or Share" link is needed under California's CCPA/CPRA or similar US state laws.</p>
 
   <h2><span class="section-num">8.</span>Your rights and controls</h2>
   <ul>
-    <li><strong>Access and portability:</strong> Settings &rarr; Data exports everything you have created as a JSON file.</li>
+    <li><strong>Access and portability:</strong> Settings &rarr; Export session saves your records as a JSON file. If you use Sync, you can also ask us for a copy of what is stored in your account.</li>
     <li><strong>Delete your cloud account and synced data:</strong> Settings &rarr; Sync &rarr; Delete cloud account. If you cannot open the app, use the <a href="delete-account.html">account deletion page</a>. Data on your device is not affected.</li>
-    <li><strong>Withdraw consent:</strong> switch off crash reports or usage statistics in Settings at any time.</li>
+    <li><strong>Stop syncing:</strong> pause Sync or sign out in Settings at any time.</li>
     <li><strong>Other requests</strong> (correction, objection, a complaint to your data-protection authority): email us at the address below. If you are in the EU or UK you have these rights under the GDPR; California residents have equivalent rights under the CCPA/CPRA.</li>
   </ul>
 
   <h2><span class="section-num">9.</span>Service providers</h2>
-  <p>We use these processors under data-processing agreements: <strong>Supabase</strong> (database, storage, authentication; EU region), <strong>Sentry</strong> (crash reports; EU data region), <strong>RevenueCat</strong> (subscriptions) and <strong>Google</strong> (Play Billing and sign-in). Each has its own sub-processors, listed in its own privacy documentation.</p>
+  <p>We use these processors under data-processing agreements: <strong>Supabase</strong> (database, storage, authentication; EU region), <strong>RevenueCat</strong> (subscriptions) and <strong>Google</strong> (Play Billing and sign-in). Each has its own sub-processors, listed in its own privacy documentation.</p>
 
   <h2><span class="section-num">10.</span>Children's privacy</h2>
   <p>Downrange is intended for people aged 18 or over and is not directed at children. We do not knowingly collect information from anyone under 18.</p>
