@@ -131,7 +131,7 @@
   <div class="tldr">
     <div class="tldr-label">In short</div>
     <p><strong>Downrange works fully offline, and by default your data stays on your device.</strong> Your photos, shot groups, loads and settings are stored on your phone. There is no advertising, no tracking and nothing is sold.</p>
-    <p><strong>Sync is optional and off until you turn it on</strong>: it keeps a copy in your own account so your data follows you across devices. Subscriptions are handled by Google Play and RevenueCat.</p>
+    <p><strong>Sync is optional and off until you turn it on</strong>: it keeps a copy in your own account, which you sign in to with Google or with a one-time code sent to your email, so your data follows you across devices. Subscriptions are handled by Google Play and RevenueCat.</p>
   </div>
 
   <h2><span class="section-num">1.</span>What Downrange is</h2>
@@ -144,10 +144,10 @@
   <div class="table-wrap">
   <table>
     <tr><th>Feature (off by default)</th><th>What is sent</th><th>Who processes it</th><th>Why we may do this (GDPR)</th></tr>
-    <tr><td><strong>Sync</strong>: back up and share your data across your devices</td><td>The email on your Google account, and your groups, loads, rifles and barrels, round log, sessions, zero resets, saved analyses, target presets and target photos, plus the dates of your free analysis days (so reinstalling does not reset them)</td><td>Supabase (data hosted in the EU); Google (sign-in)</td><td>Contract: you asked for the service</td></tr>
+    <tr><td><strong>Sync</strong>: back up and share your data across your devices</td><td>The email address you sign in with (your Google account's, or the one you receive sign-in codes at), and your groups, loads, rifles and barrels, round log, sessions, zero resets, saved analyses, target presets and target photos, plus the dates of your free analysis days (so reinstalling does not reset them)</td><td>Supabase (data hosted in the EU); Google (Google sign-in); Brevo (sending email sign-in codes, EU)</td><td>Contract: you asked for the service</td></tr>
   </table>
   </div>
-  <p>Sample data that ships with the app is never synced. Pausing Sync or signing out stops sending immediately; changes wait on the device until you resume. The app does not send crash reports or usage statistics. If optional ones are ever added, they will be off by default and this policy will describe them before they ship.</p>
+  <p>If you sign in with email, we use your address only to send you sign-in codes and to recognise your account; there is no password, no newsletter and no marketing. Sample data that ships with the app is never synced. Pausing Sync or signing out stops sending immediately; changes wait on the device until you resume. The app does not send crash reports or usage statistics. If optional ones are ever added, they will be off by default and this policy will describe them before they ship.</p>
 
   <h2><span class="section-num">4.</span>How long we keep it</h2>
   <ul>
@@ -173,7 +173,7 @@
   </ul>
 
   <h2><span class="section-num">9.</span>Service providers</h2>
-  <p>We use these processors under data-processing agreements: <strong>Supabase</strong> (database, storage, authentication; EU region), <strong>RevenueCat</strong> (subscriptions) and <strong>Google</strong> (Play Billing and sign-in). Each has its own sub-processors, listed in its own privacy documentation.</p>
+  <p>We use these processors under data-processing agreements: <strong>Supabase</strong> (database, storage, authentication; EU region), <strong>RevenueCat</strong> (subscriptions), <strong>Brevo</strong> (delivering one-time sign-in codes by email, EU) and <strong>Google</strong> (Play Billing and Google sign-in). Each has its own sub-processors, listed in its own privacy documentation.</p>
 
   <h2><span class="section-num">10.</span>Children's privacy</h2>
   <p>Downrange is intended for people aged 18 or over and is not directed at children. We do not knowingly collect information from anyone under 18.</p>
