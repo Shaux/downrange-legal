@@ -132,26 +132,29 @@
     <div class="tldr-label">In short</div>
     <p><strong>Downrange works fully offline, and by default your data stays on your device.</strong> Your photos, shot groups, loads and settings are stored on your phone. There is no advertising, no tracking and nothing is sold.</p>
     <p><strong>Sync is optional and off until you turn it on</strong>: it keeps a copy in your own account, which you sign in to with Google or with a one-time code sent to your email, so your data follows you across devices. Subscriptions are handled by Google Play and RevenueCat.</p>
+  <p><strong>Crash reports are also optional and off until you turn them on</strong>: they send us the error when the app crashes, never your photos, groups or loads.</p>
   </div>
 
   <h2><span class="section-num">1.</span>What Downrange is</h2>
   <p>Downrange is a target-analysis tool for shooting-sports practice. You photograph or manually mark a shot group, and the app computes group statistics (spread, dispersion, point-of-impact offset and related metrics) on the device. It is a personal record-keeping and analysis tool, intended for adults (see section 10).</p>
 
   <h2><span class="section-num">2.</span>What stays on your device</h2>
-  <p>Unless you turn on Sync, everything you enter or photograph stays in your device's own storage: target photos, shot coordinates, group statistics, loads, rifles, sessions, notes, velocity readings and settings. Uninstalling the app removes it. A session file you explicitly export or share is the only other way data leaves the app.</p>
+  <p>Unless you turn on Sync, everything you enter or photograph stays in your device's own storage: target photos, shot coordinates, group statistics, loads, rifles, sessions, notes, velocity readings and settings. Uninstalling the app removes it. A session file you explicitly export or share, and crash reports if you turn them on (section 3), are the only other ways data leaves the app.</p>
 
   <h2><span class="section-num">3.</span>Sync, and what it sends</h2>
   <div class="table-wrap">
   <table>
     <tr><th>Feature (off by default)</th><th>What is sent</th><th>Who processes it</th><th>Why we may do this (GDPR)</th></tr>
     <tr><td><strong>Sync</strong>: back up and share your data across your devices</td><td>The email address you sign in with (your Google account's, or the one you receive sign-in codes at), and your groups, loads, rifles and barrels, round log, sessions, zero resets, saved analyses, target presets and target photos, plus the dates of your free analysis days (so reinstalling does not reset them)</td><td>Supabase (data hosted in the EU); Google (Google sign-in); Brevo (sending email sign-in codes, EU)</td><td>Contract: you asked for the service</td></tr>
+    <tr><td><strong>Crash reports</strong>: tell us when the app crashes so we can fix it</td><td>The error and where in the app it happened (its stack trace), the app and Android version and the phone model; for a crash inside Android itself, also a random install identifier that the crash library generates. Never your account, email, photos, groups, loads or any other record, and no log of what you tapped. Like any server, Sentry receives your IP address with the request: <span class="placeholder">[confirm the Sentry project is set not to store IP addresses, then say so here]</span></td><td>Sentry (EU data region)</td><td>Consent: you turn it on in Settings and can turn it off at any time</td></tr>
   </table>
   </div>
-  <p>If you sign in with email, we use your address only to send you sign-in codes and to recognise your account; there is no password, no newsletter and no marketing. Sample data that ships with the app is never synced. Pausing Sync or signing out stops sending immediately; changes wait on the device until you resume. The app does not send crash reports or usage statistics. If optional ones are ever added, they will be off by default and this policy will describe them before they ship.</p>
+  <p>If you sign in with email, we use your address only to send you sign-in codes and to recognise your account; there is no password, no newsletter and no marketing. Sample data that ships with the app is never synced. Pausing Sync or signing out stops sending immediately; changes wait on the device until you resume. Crash reports are off by default and are turned on and off in Settings; turning them off stops anything further being sent. The app does not send usage statistics. If any are ever added, they will be off by default and this policy will describe them before they ship.</p>
 
   <h2><span class="section-num">4.</span>How long we keep it</h2>
   <ul>
     <li><strong>Sync data:</strong> until you delete your cloud account (see section 8), when it is removed from our servers. Records you delete in the app are kept as a small deletion marker (no content) so your other devices remove them too.</li>
+    <li><strong>Crash reports:</strong> kept by Sentry for <span class="placeholder">[retention period for our Sentry plan, to confirm]</span>, then deleted automatically.</li>
     <li><strong>Data on your device:</strong> until you delete it, clear the app's data, or uninstall.</li>
   </ul>
 
@@ -166,14 +169,15 @@
 
   <h2><span class="section-num">8.</span>Your rights and controls</h2>
   <ul>
-    <li><strong>Access and portability:</strong> Settings &rarr; Export session saves your records as a JSON file. If you use Sync, you can also ask us for a copy of what is stored in your account.</li>
+    <li><strong>Access and portability:</strong> Settings &rarr; Export session saves your records (not your target photos) as a JSON file, and Import session loads such a file back, adding what is missing and replacing nothing. If you use Sync, you can also ask us for a copy of what is stored in your account.</li>
     <li><strong>Delete your cloud account and synced data:</strong> Settings &rarr; Sync &rarr; Delete cloud account. If you cannot open the app, use the <a href="delete-account.html">account deletion page</a>. Data on your device is not affected.</li>
     <li><strong>Stop syncing:</strong> pause Sync or sign out in Settings at any time.</li>
+    <li><strong>Crash reports:</strong> turn them off in Settings and nothing more is sent. A report holds no account or email, so we usually cannot tell which reports are yours; they are deleted automatically when the retention period ends.</li>
     <li><strong>Other requests</strong> (correction, objection, a complaint to your data-protection authority): email us at the address below. If you are in the EU or UK you have these rights under the GDPR; California residents have equivalent rights under the CCPA/CPRA.</li>
   </ul>
 
   <h2><span class="section-num">9.</span>Service providers</h2>
-  <p>We use these processors under data-processing agreements: <strong>Supabase</strong> (database, storage, authentication; EU region), <strong>RevenueCat</strong> (subscriptions), <strong>Brevo</strong> (delivering one-time sign-in codes by email, EU) and <strong>Google</strong> (Play Billing and Google sign-in). Each has its own sub-processors, listed in its own privacy documentation.</p>
+  <p>We use these processors under data-processing agreements: <strong>Supabase</strong> (database, storage, authentication; EU region), <strong>RevenueCat</strong> (subscriptions), <strong>Brevo</strong> (delivering one-time sign-in codes by email, EU), <strong>Sentry</strong> (crash reports, only if you turn them on; EU data region) and <strong>Google</strong> (Play Billing and Google sign-in). Each has its own sub-processors, listed in its own privacy documentation.</p>
 
   <h2><span class="section-num">10.</span>Children's privacy</h2>
   <p>Downrange is intended for people aged 18 or over and is not directed at children. We do not knowingly collect information from anyone under 18.</p>
